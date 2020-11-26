@@ -6,7 +6,7 @@ from operator import itemgetter
 import requests.utils
 from requests import HTTPError
 
-version = '1.0'
+version = '1.1.1'
 https = 'https://github.com'
 api_https = 'https://api.github.com'
 
@@ -167,8 +167,8 @@ if __name__ == '__main__':
         sys.exit()
 
     # Если namespace.url заканчивается на '/', то убираем его
-        if namespace.url[-1] == '/':
-            namespace.url = namespace.url[:-1]
+    if namespace.url[-1] == '/':
+        namespace.url = namespace.url[:-1]
 
     # Проверка дат (дата начала не должна быть больше даты окончания).
     if namespace.startdate is not None and namespace.enddate is not None:
