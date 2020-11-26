@@ -166,6 +166,10 @@ if __name__ == '__main__':
         parser.print_help()
         sys.exit()
 
+    # Если namespace.url заканчивается на '/', то убираем его
+        if namespace.url[-1] == '/':
+            namespace.url = namespace.url[:-1]
+
     # Проверка дат (дата начала не должна быть больше даты окончания).
     if namespace.startdate is not None and namespace.enddate is not None:
         if namespace.startdate > namespace.enddate:
